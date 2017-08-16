@@ -9,12 +9,12 @@ import { ServersComponent } from './servers/servers.component';
 @NgModule({
   declarations: [
     AppComponent,
+    ServerComponent,
     ServersComponent
   ],
   imports: [
     BrowserModule,
-    FormsModule,
-    ServerComponent
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
