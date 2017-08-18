@@ -1,0 +1,36 @@
+<html>
+    <header>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    </header>
+    <body>
+        <button onclick="console.log('button clicked')">My Button that is logged</button>
+
+        <br/>        
+        <br/>
+        Event names of the button will be printed in console: CTRL+SHIFT+I or F12
+
+        <script>
+            var elem = document.querySelector("button");
+            var events = $('button').data(elem, 'events');
+            var myElem = events[0];
+            
+            var slotsInObject = getSlots(myElem.__proto__);
+            var slotsStartingWithOn = slotsInObject.filter(function(item) {
+                return item.toString().startsWith("on")
+            });
+            var eventNames = slotsStartingWithOn.map(function(item) {
+                return item.toString().substring(2);
+            });
+
+            console.log(eventNames);
+
+            function getSlots(obj) {
+                var res = [];
+                for(var m in obj) {
+                        res.push(m)
+                }
+                return res;
+            }
+        </script>
+    </body>
+</html>

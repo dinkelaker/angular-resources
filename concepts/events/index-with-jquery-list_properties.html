@@ -1,0 +1,20 @@
+<html>
+    <header>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    </header>
+    <body>
+        <div>My Div that is logged</div>
+        <button onclick="console.log('button clicked')">My Button that is logged</button>
+
+        <br/>        
+        <br/>
+
+        <script>
+            var elem = document.querySelector("button");
+            var events = $('button').data(elem, 'events');
+            var myElem = events[0];
+            var myElemsProperties = Object.keys(myElem.__proto__)
+            console.log(myElemsProperties);
+        </script>
+    </body>
+</html>
